@@ -1,0 +1,19 @@
+{
+  "name": "mm-tslint-2019",
+  "version": "1.0.0",
+  "description": "my tslint standards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meltsas/mm-tslint-2019.git"
+  },
+  "author": "Martin Meltsas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meltsas/mm-tslint-2019/issues"
+  },
+  "homepage": "https://github.com/meltsas/mm-tslint-2019#readme"
+}
