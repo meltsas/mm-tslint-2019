@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const path = '../../tsling.json'
+const path = '../../tslint.json'
 
 try {
   const content = fs.readFileSync('./tslint.json');
