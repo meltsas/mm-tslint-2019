@@ -13,8 +13,16 @@ const question = function (q) {
 
 
 try {
-  const content = fs.readFileSync('./mm-tslint.json');
+
+  let projetctTslint = null;
   if (fs.existsSync(path)) {
+    projetctTslint = JSON.parse(fs.readFileSync(path));
+    console.log('projetctTslint.rules', projetctTslint.rules);
+  } else {
+    console.error('No tsling.json file found in Your project root folder!');
+  }
+
+  if (projetctTslint) {
     (async function main() {
       const userAnswers = ['yes', 'y', 'no', 'n'];
       let answer = '';
@@ -22,7 +30,9 @@ try {
         answer = await question('Do You want to modify Your tslint.json with mm-tslint rules? (Y/N): ');
       }
       if (answer === 'yes' || answer === 'y') {
-        fs.writeFileSync(path, content, {encoding: 'utf8', flag: 'w'});
+        const myRules = JSON.parse(fs.readFileSync('./mm-tslint.json'));
+        projetctTslint.rules = myRules.rules;
+        fs.writeFileSync(path, JSON.stringify(projetctTslint,null,'  '), {encoding: 'utf8', flag: 'w'});
         console.info('Your tslint were modified with mm-tslint rules');
         process.exit();
       } else {
@@ -31,10 +41,7 @@ try {
       }
     })();
 
-    fs.writeFileSync(path, content, {encoding: 'utf8', flag: 'w'});
 
-  } else {
-    console.error('No tsling.json file found in Your project root folder!');
   }
 } catch (err) {
   console.error('error', err);
