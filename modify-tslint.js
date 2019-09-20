@@ -17,7 +17,6 @@ try {
   let projetctTslint = null;
   if (fs.existsSync(path)) {
     projetctTslint = JSON.parse(fs.readFileSync(path));
-    console.log('projetctTslint.rules', projetctTslint.rules);
   } else {
     console.error('No tsling.json file found in Your project root folder!');
   }
