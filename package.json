@@ -1,6 +1,6 @@
 {
   "name": "mm-tslint-2019",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "my tslint standards",
   "main": "index.js",
   "scripts": {
